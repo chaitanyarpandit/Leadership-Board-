@@ -153,10 +153,20 @@
     <h2>Leadership Board | Computer Science</h2>
   </header>
 
-  <audio autoplay loop>
-    <source src="https://raw.githubusercontent.com/chaitanyarpandit/Leadership-Board-/main/awards-ceremony-grand-opening-music-372192.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  <audio id="bg-music" autoplay muted loop>
+  <source src="https://raw.githubusercontent.com/chaitanyarpandit/Leadership-Board-/main/awards-ceremony-grand-opening-music-372192.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  window.addEventListener('click', function () {
+    const audio = document.getElementById('bg-music');
+    audio.muted = false;
+    audio.play().catch((e) => {
+      console.log("Autoplay failed:", e);
+    });
+  }, { once: true });
+</script>
 
   <div class="scrolling-wrapper">
     <div style="display: flex; flex-wrap: nowrap; gap: 40px;">
@@ -224,4 +234,5 @@
   </footer>
 </body>
 </html>
+
 
